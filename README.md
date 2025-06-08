@@ -18,17 +18,21 @@ A Rust-based CLI tool that generates and executes terminal commands using OpenAI
 
 - Set PATH to the binary
 
-    - MacOS/Linux:
-    ```
-    export PATH="$PATH:/path/to/llm-term"
-    ```
-    - To set it permanently, add `export PATH="$PATH:/path/to/llm-term"` to your shell configuration file (e.g., `.bashrc`, `.zshrc`)
+  - MacOS/Linux:
 
-    - Windows:
-    ```
-    set PATH="%PATH%;C:\path\to\llm-term"
-    ```
-    - To set it permanently, add `set PATH="%PATH%;C:\path\to\llm-term"` to your shell configuration file (e.g., `$PROFILE`)
+  ```
+  export PATH="$PATH:/path/to/llm-term"
+  ```
+
+  - To set it permanently, add `export PATH="$PATH:/path/to/llm-term"` to your shell configuration file (e.g., `.bashrc`, `.zshrc`)
+
+  - Windows:
+
+  ```
+  set PATH="%PATH%;C:\path\to\llm-term"
+  ```
+
+  - To set it permanently, add `set PATH="%PATH%;C:\path\to\llm-term"` to your shell configuration file (e.g., `$PROFILE`)
 
 ## Development
 
@@ -36,11 +40,16 @@ A Rust-based CLI tool that generates and executes terminal commands using OpenAI
 2. Build the project using Cargo: `cargo build --release`
 3. The executable will be available in the `target/release` directory
 
+## Building with Docker (No Rust Needed)
+
+If you do not want to install Rust on your system, you can build `llm-term` using Docker. See [DOCKER.md](./DOCKER.md) for detailed Docker-based build instructions, including how to run both `llm-term` and Ollama in containers for a fully containerized workflow.
+
 ## Usage
 
 1. Set your OpenAI API key (if using OpenAI models):
 
    - MacOS/Linux:
+
      ```
      export OPENAI_API_KEY="sk-..."
      ```
@@ -50,8 +59,7 @@ A Rust-based CLI tool that generates and executes terminal commands using OpenAI
      set OPENAI_API_KEY="sk-..."
      ```
 
-
-2. If using Ollama, make sure it's running locally on the default port (11434)
+2. If using Ollama, make sure it's running locally on the default port (11434), or run Ollama in a container as described in [DOCKER.md](./DOCKER.md). Ensure that `llm-term` can access the Ollama container (e.g., via `localhost:11434` or appropriate Docker networking).
 
 3. Run the application with a prompt:
 
